@@ -1,0 +1,64 @@
+print('Hello, world!')
+
+import random
+class kreditka:
+  def __init__(self, jmeno, prijmeni, trida):
+    self.jmeno = jmeno
+    self.prijmeni = prijmeni
+    self.trida = trida
+    self.kod = "1278"
+    self.predcisli = ""
+    self.cislo = ""
+    self.pin = ""
+    self.c_uctu = ""
+    
+  def cislo_uctu(self):
+    if len(self.c_uctu) > 0:
+      print("Èíslo úètu:", self.c_uctu)
+    else:
+      for i in range(4):
+        p = random.randint(0,9)
+        self.predcisli += str(p)
+      for i in range(9):
+        c = random.randint(0,9)
+        self.cislo += str(c)
+      self.c_uctu = self.predcisli + "-" + self.cislo + "/" + self.kod
+      print("Èíslo úètu:", self.c_uctu)
+
+  def __str__ (self):
+    return '\n----------Metoda vıpis----------'
+      
+  def vypis_pin(self):
+    if len(self.pin) > 0:
+       print("PIN:", self.pin)
+    else:
+      for i in range(4):
+        pi = random.randint(0,9)
+        self.pin += str(pi)
+      print("PIN:", self.pin)
+    
+    
+  def udaje(self):
+    print(self.jmeno, self.prijmeni, self.trida)
+    
+  def vypis(self):
+    print(banka)
+    banka.cislo_uctu()
+    banka.vypis_pin()
+    banka.udaje()
+  def __del__ (self):
+    print("\nÚspìšnì vygenerováno a vypsáno")
+
+
+jmeno = input("Zadejte køestní jméno: ")
+prijmeni = input("Zadejte pøíjmení: ")
+trida = input("Zadejte tøídu: ")     
+
+banka = kreditka(jmeno, prijmeni, trida)
+banka.vypis_pin()
+banka.cislo_uctu()
+banka.udaje()
+banka.vypis() 
+del banka 
+
+    
