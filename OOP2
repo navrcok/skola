@@ -1,0 +1,90 @@
+print('Hello, world!')
+import random
+class kreditka:
+  def __init__(self, jmeno, prijmeni, trida):
+    self.jmeno = jmeno
+    self.prijmeni = prijmeni
+    self.trida = trida
+    self.kod = "1278"
+    self.predcisli = ""
+    self.cislo = ""
+    self.pin = ""
+    self.c_uctu = ""
+    
+    
+  def cislo_uctu(self):
+    if len(self.c_uctu) > 0:
+      print("\nČíslo účtu:", self.c_uctu)
+    else:
+      for i in range(4):
+        p = random.randint(0,9)
+        self.predcisli += str(p)
+      for i in range(9):
+        c = random.randint(0,9)
+        self.cislo += str(c)
+      self.c_uctu = self.predcisli + "-" + self.cislo + "/" + self.kod
+      print("Číslo účtu:", self.c_uctu)
+
+  def __str__ (self):
+    return '\n----------Metoda výpis----------'
+      
+  def vypis_pin(self):
+    if len(self.pin) > 0:
+       print("PIN:", self.pin)
+    else:
+      for i in range(4):
+        pi = random.randint(0,9)
+        self.pin += str(pi)
+      print("\nPIN:", self.pin)
+    
+    
+  def udaje(self):
+    print(self.jmeno, self.prijmeni, self.trida)
+    
+  def vypis(self):
+    print(banka)
+    banka.cislo_uctu()
+    banka.vypis_pin()
+    banka.udaje()
+  
+  
+
+class druhakreditka(kreditka):
+  def __init__(s, jmeno, prijmeni, trida):
+    s.pin2 = ""
+  
+  def vypis_pin2(s):
+    if len(self.pin) == 4:
+      for i in range(4):
+        pinn = random.randint(0,9)
+        self.pin2 += str(pinn)
+      print("\nPIN:", s.pin2)
+    else:
+      print('blbě')
+  
+  def __str__ (s):
+    return '\n----------Metoda výpis2----------'
+  
+  def vypis(s):
+    print(banka)
+    banka.cislo_uctu()
+    banka.vypis_pin2()
+    banka.udaje()
+
+  def __del__ (s):
+    print("\nÚspěšně vygenerováno a vypsáno")
+          
+
+jmeno = input("Zadejte křestní jméno: ")
+prijmeni = input("Zadejte příjmení: ")
+trida = input("Zadejte třídu: ")     
+
+
+banka = druhakreditka(jmeno, prijmeni, trida)
+banka.vypis_pin()
+banka.cislo_uctu()
+banka.udaje()
+banka.vypis() 
+banka.vypis_pin2()
+banka.vypis2()
+del banka 
